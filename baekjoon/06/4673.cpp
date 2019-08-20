@@ -1,17 +1,17 @@
-/*¼¿ÇÁ³Ñ¹ö*/
+/*ì…€í”„ë„˜ë²„*/
  
 #include <stdio.h>
 #define N 10001
 
 int num[N];
 
-int selfnum(int n){  //selfnumber Ã£´Â ÇÔ¼ö 
-	int sum=n;  //º¯¼ö sum¿¡ n´ëÀÔ 
+int selfnum(int n){  //selfnumber ì°¾ëŠ” í•¨ìˆ˜ 
+	int sum=n;  //ë³€ìˆ˜ sumì— nëŒ€ì… 
 	
  	while(n!=0){
 		sum += n%10;   
-		n=n/10;         //nÀÌ 0ÀÌ ¾Æ´Ñµ¿¾È sum¿¡ sum°ú sumÀÇ ¸¶Áö¸· ÀÚ¸´¼ö¸¦ ´õÇÔ 
-	}                   //  ±×¸®°í nÀ» ÇÑÀÚ¸®¾¿ ÁÙ¿©ÁÜ(0ÀÌ µÉ¶§±îÁö)   
+		n=n/10;         //nì´ 0ì´ ì•„ë‹Œë™ì•ˆ sumì— sumê³¼ sumì˜ ë§ˆì§€ë§‰ ìë¦¿ìˆ˜ë¥¼ ë”í•¨ 
+	}                   //  ê·¸ë¦¬ê³  nì„ í•œìë¦¬ì”© ì¤„ì—¬ì¤Œ(0ì´ ë ë•Œê¹Œì§€)   
 	return sum;
 }
 
@@ -21,15 +21,15 @@ int main(){
 	}
 	
 	for(int i=1;i<N;i++){ 
-		int idx=selfnum(i);  //idx¸¦ selfnum °ªÀ¸·Î ÃÊ±âÈ­ÇÑ ÈÄ 
-		if(idx<=N){         //idx°¡ Nº¸´Ù ÀÛÀºµ¿¾È 
-			num[idx]=0;     //num[idx]°¡ selfnumÀÌ¸é ÀÖÀ¸¸é 0 
+		int idx=selfnum(i);  //idxë¥¼ selfnum ê°’ìœ¼ë¡œ ì´ˆê¸°í™”í•œ í›„ 
+		if(idx<=N){         //idxê°€ Në³´ë‹¤ ì‘ì€ë™ì•ˆ 
+			num[idx]=0;     //num[idx]ê°€ selfnumì´ë©´ ìˆìœ¼ë©´ 0 
 		}
 	}
 	
 	for(int i=1;i<N;i++){
-		if(num[i] !=0) printf("%d\n",i);  //num[i]°¡ selfnumÀÌ ¾Æ´Ï¸é 
-			                              //±× ¼ıÀÚ¸¦ ÇÑÁÙ¾¿ Ãâ  
+		if(num[i] !=0) printf("%d\n",i);  //num[i]ê°€ selfnumì´ ì•„ë‹ˆë©´ 
+			                              //ê·¸ ìˆ«ìë¥¼ í•œì¤„ì”© ì¶œë ¥  
 	}
 	return 0;
 }
